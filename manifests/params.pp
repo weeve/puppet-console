@@ -1,10 +1,10 @@
 # Parameters class for console module
 class console::params {
   case $::osfamily {
-    Debian, RedHat: {
+    'RedHat', 'Debian': {
       $local_file = '/etc/rc.local'
     }
-    Suse: {
+    'Suse': {
       $local_file = '/etc/init.d/boot.local'
     }
     default: {
